@@ -1,0 +1,34 @@
+{% include 'sellerheader.html'%}
+<body style="background: pink">
+	
+	<h1 align="center"><font color="white">Properties</font></h1>
+	<form method="post">
+		<br><br><br>
+	<table  align="center" class="table" style="width:700px;height: 200px;">
+			<tr>
+				<th><font color="white">Image</font></th>
+				<th><font color="white">Amount</font></th>
+				<th><font color="white">Description</font></th>
+				<th><font color="white">Status</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['pr']%}
+			<td><font color="white"><b><img src="/{{row['property_image']}}" width="200" height="200"><img></b></font></td>
+			<td><font color="white"><b>{{row['amount']}}</b></font></td>
+			<td><font color="white"><b>{{row['description']}}</b></font></td>
+			<td><font color="white"><b>{{row['status']}}</b></font></td>
+			<td>
+				<a href="/seller/viewbooking?id={{row['property_id']}}"class="btn btn-primary">Enquires</a>
+			</td>
+			<td>
+				<a href="?action=delete&id={{row['property_id']}}"class="btn btn-primary">Delete</a>
+			</td>
+		</tbody>
+		{% endfor %}
+	</table>
+			
+
+	</form>
+<br><br><br><br>
+
+{% include 'footer.html'%}

@@ -1,0 +1,20 @@
+{% include 'userheader.html' %}
+<br><br><br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Add To Cart</h2></center>
+	<table  align="center" style="width: 700px;color: blue;" class="table" >
+		<tr>
+			<th bgcolor="powdergreen">Quantity</th>
+			<td>
+				<input type="text" name="quantity" style="width:20%;color: blue;" class="table">
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-primary" value="Add"></td>
+		</tr>
+	</table>
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

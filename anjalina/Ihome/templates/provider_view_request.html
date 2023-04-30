@@ -1,0 +1,34 @@
+{% include 'provider_header.html' %}
+<br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Requests</h2></center>
+	<table  align="center" style="width: 700px;color: blue;" class="table" border="1" >
+		<tr>
+			<th bgcolor="powdergreen">User Name</th>
+			<th bgcolor="powdergreen">Booking Date</th>
+			<th bgcolor="powdergreen">Description</th>
+			<th bgcolor="powdergreen">Work Image 1 </th>
+			<th bgcolor="powdergreen">Work Image 2</th>
+			<th bgcolor="powdergreen">Booking Status</th>
+			<th bgcolor="powdergreen"></th>
+		</tr>
+		<tbody>
+			{% for row in data['viewrequests'] %}
+			<tr>
+				<td>{{row['uname']}}</td>
+				<td>{{row['booking_date']}}</td>
+				<td>{{row['booking_description']}}</td>
+				<td><img src="/{{row['work_image1']}}" height="100" width="100"></td>
+				<td><img src="/{{row['work_image2']}}" height="100" width="100"></td>
+				<td>{{row['booking_status']}}</td>
+				<td><a href="sendproposal?bid={{row['booking_id']}}" class="btn btn-primary">Send Proposal</a></td>
+			</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

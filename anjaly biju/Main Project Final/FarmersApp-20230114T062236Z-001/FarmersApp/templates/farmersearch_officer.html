@@ -1,0 +1,141 @@
+{% include 'farmerheader.html' %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+input[type=text]{
+            width: 50%;
+            padding: 12px;
+            margin-right: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+</style>
+</head>
+<body style="background-image: url(/static/images/gallery-02.jpg);">
+  <br><br>
+      <!-- <h1 align="center"> <font size="30">Search Doctors</font></h1> -->
+      <form method="post">
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" placeholder="Search Your Nearest Officers Here.." name="name" style="width: 50%; height: 15%;">
+  <button type="submit" name= "submit" style="width: 10%; height: 15%; color: blue;"class="btn btn-sm"><i class="fa fa-search"></i></button>
+  <br><br><br><br>
+<style>
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: white;
+  padding: 10px;
+  grid-row-gap: 5px;
+  grid-column-gap: 10px;
+} 
+.grid-item {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+  text-align: center;
+  }
+
+table{
+  background-color: lightyellow;
+  padding: 30px;
+  text-align: center;
+
+  }
+td{
+  width:50%;
+  padding: 20px;
+  font-family: Calibri;
+  font-size: 20px;
+  resize:vertical;
+}
+tr{
+  width:50%;
+  padding: 20px;
+
+  font-family: Calibri;
+  font-size: 20px;
+  resize:vertical;
+}
+input[type=text]{
+  width:95%;
+  padding: 20px;
+
+  font-family: Calibri;
+  font-size: 20px;
+  resize:vertical;
+/*  border:1px solid black;
+*/}
+  input[type=submit]{
+  width:95%;
+  padding: 20px;
+
+  font-family: Calibri;
+  font-size: 20px;
+  resize:vertical;
+}
+
+</style>
+    <body style="background-image: url(/static/images/gallery-02.jpg);">
+    
+  <div class="grid-container">
+    
+      {% for row in data['viewsearch'] %}
+          <div class="grid-item">
+              <h1 align="center"> <font size="20">Officer Details</font></h1>
+              <br>
+            <h3><b>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['NAME']}}</b></h3><br>
+            <h3><b>Department:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['dep_name']}}</b></h3><br>  
+            <h3><b>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['gender']}}</h3></b><br><h3><b>Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['address']}}</h3></b><br>
+            <h3><b>Place:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['place']}}</h3></b><br>
+            <h3><b>Contact No.:&nbsp;&nbsp;&nbsp;&nbsp;{{row['mobileno']}}</b></h3><br><h3><b>
+            Email:&nbsp;&nbsp;&nbsp;&nbsp;{{row['email']}}</b></h3><br>  
+            <a href="/farmer/send_suggestions?id={{row['officer_id']}}" class="btn btn-sm btn-danger" style="text-decoration: none; size: width=350px; height: 40px; padding:10px;">Share Your Ideas</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/farmer/enquiry?id={{row['officer_id']}}" class="btn btn-sm btn-danger" style="text-decoration: none; size: width=350px; height: 40px; padding:10px;">Enquiry</a>
+          </div>
+      {% endfor %} 
+  </div>  
+</form>
+<br><br><br><br>
+<br><br>
+
+{% include 'footer.html' %}

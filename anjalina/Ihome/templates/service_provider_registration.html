@@ -1,0 +1,59 @@
+{% include 'public_header.html' %}
+<br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Registration</h2></center>
+	<table  align="center" style="width: 40%;color: blue;" class="table" >
+		<tr>
+			<th>Area Name</th>
+			<td>
+				<select name="ar"class="form-control"> 
+					<option selected="" readonly>Select</option>
+					{% for row in data['selarea'] %}
+					<option value="{{row['area_id']}}">{{row['area_name']}}</option>
+					{% endfor %}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>First Name</th>
+			<td><input type="text" name="fname" required=" " class="form-control" ></td>
+		</tr>
+		<tr>
+			<th>Last Name</th>
+			<td><input type="text" name="lname" required=" " class="form-control" ></td>
+		</tr>
+		
+		<tr>
+			<th>Place</th>
+			<td><input type="text" name="place" required=" " class="form-control" ></td>
+		</tr>
+		<tr>
+			<th>Pincode</th>
+			<td><input type="text" name="pin" required=" " class="form-control" pattern="[0-9]{6}" ></td>
+		</tr>
+		<tr>
+			<th>Phone Number</th>
+			<td><input type="text" name="phn" required=" " class="form-control" pattern="[0-9]{10}" ></td>
+		</tr>
+		<tr>
+			<th>Email</th>
+			<td><input type="email" name="email" required=" " class="form-control" ></td>
+		</tr>
+		<tr>
+			<th>User Name</th>
+			<td><input type="text" name="uname" required=" " class="form-control" ></td>
+		</tr>
+		<tr>
+			<th>Password</th>
+			<td><input type="password" name="pwd" required=" " class="form-control" ></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-primary" value="Register"></td>
+		</tr>
+	</table>
+</form>
+<br>
+<br>
+
+
+{% include 'footer.html' %}

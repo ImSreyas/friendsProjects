@@ -1,0 +1,53 @@
+{% load static %}
+<script src="{% static '' %}js/jquery-2.2.3.min.js"></script>
+	<!-- Default-JavaScript-File -->
+
+	<!-- banner slider -->
+	<script src="{% static '' %}js/responsiveslides.min.js"></script>
+	<script>
+		$(function () {
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: true,
+				speed: 1000,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+		});
+	</script>
+	<!-- //banner slider -->
+
+	<!-- fixed navigation -->
+	<script src="{% static '' %}js/fixed-nav.js"></script>
+	<!-- //fixed navigation -->
+
+	<!-- smooth scrolling -->
+	<script src="{% static '' %}js/SmoothScroll.min.js"></script>
+	<!-- move-top -->
+	<script src="{% static '' %}js/move-top.js"></script>
+	<!-- easing -->
+	<script src="{% static '' %}js/easing.js"></script>
+	<!--  necessary snippets for few javascript files -->
+	<script src="{% static '' %}js/medic.js"></script>
+
+	<script src="{% static '' %}js/bootstrap.js"></script>
+	<!-- Necessary-JavaScript-File-For-Bootstrap -->
+
+	<!-- //Js files -->
+<script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings =
+            {"appId":"18d9dbad2bd91b55ce31f501742b81b1a","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>

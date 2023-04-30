@@ -1,0 +1,32 @@
+{% include 'adminheader.html'%}
+<body style="background: pink">
+	<h1 align="center"><font color="black"><u>Reviews</u></font></h1>
+	<form method="post">
+			<br><br><br>
+	<br><br><br>
+	<br><br><br>
+
+	<table  align="center" class="table" style="width:700px;">
+			<tr>
+				<th><font color="white">Date</font></th>
+				<th><font color="white">Customer Name</font></th>
+				<th><font color="white">Feedback</font></th>
+				<th><font color="white">Reply</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['feed']%}
+			<td><font color="white"><b>{{row['date']}}</b></font></td>
+			<td><font color="white"><b>{{row['NAME']}}</b></font></td>
+			<td><font color="white"><b>{{row['feedback']}}</b></font></td>
+			<td><font color="white"><b>{{row['reply']}}</b></font></td>
+			<td>
+				<a href="?action=delete&id={{row['feedback_id']}}" class="btn btn-primary">Delete</a>
+			</td>
+		</tbody>
+		{% endfor %}
+	</table>
+			
+
+	</form>
+<br><br>
+{% include 'footer.html'%}

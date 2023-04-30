@@ -1,0 +1,123 @@
+{% extends 'user/main.html' %}
+{% load static %}
+
+{% block usercontent %}
+<div class="w3l_banner_nav_right">
+    <!-- about -->
+            <div class="privacy about">
+                <h3>Chec<span>kout</span></h3>
+                
+              <div class="checkout-right">
+                        <h4>Your shopping cart</span></h4>
+                    <table class="timetable_sub" id="displayTable">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Item Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total Price</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% with totals=0 %}     
+                            {% for i in catitems %}
+                            <tr class="rem1">
+                            <td class="invert-image"><a href="single.html"><img src="{{ i.catimng }}" alt="" style="max-height: 100px; max-width: 50px;" class="img-responsive"></a></td>
+                            <td class="invert">{{ i.catitm }}</td>
+
+                            <td class="invert">₹ {{ i.catprice }}</td>
+                            <td class="invert">{{ i.catqty }}</td>
+                            <td class="invert">
+                                {%  widthratio i.catprice 1 i.catqty %} 
+                            
+                               </td>
+                            <td class="invert">
+                                <div class="rem">
+                                    <div class="close1"> </div>
+                                </div>
+    
+                            </td>
+                        </tr>
+                        {%  endfor %}
+                        {% endwith %}
+                        
+    
+                    </tbody></table>
+                </div>
+                <div class="checkout-left">	
+                    <div class="col-md-4 checkout-left-basket">
+                        <h4>Continue to basket</h4>
+                        <ul>
+                        
+                            <li>Total <i>-</i> <h1 id="ttls">00</h1></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 address_form_agile">
+                          <h4>Delivery Address</h4>
+                    <form action=""  method="post" class="creditly-card-form agileinfo_form">
+                        {% csrf_token %}
+                                        <section class="creditly-wrapper wthree, w3_agileits_wrapper">
+                                            <div class="information-wrapper">
+                                                <div class="first-row form-group">
+                                                    <div class="controls">
+                                                        <label class="control-label">Full name: </label>
+                                                        <input class="billing-address-name form-control" type="text" name="dname" placeholder="Full name">
+                                                    </div>
+                                                    <div class="w3_agileits_card_number_grids">
+                                                        <div class="w3_agileits_card_number_grid_left">
+                                                            <div class="controls">
+                                                                <label class="control-label">Mobile number:</label>
+                                                                <input class="form-control" type="number" name="dmob" placeholder="Mobile number">
+                                                            </div>
+                                                        </div>
+                                                        <div class="w3_agileits_card_number_grid_right">
+                                                            <div class="controls">
+                                                                <label class="control-label">Landmark: </label>
+                                                                <input class="form-control" type="hidden" id="ttlamt" name="ttlamt" placeholder="Landmark">
+                                                             <input class="form-control" type="text" name="dland" placeholder="Landmark">
+                                                            </div>
+                                                        </div>
+                                                        <div class="clear"> </div>
+                                                    </div>
+                                                    <div class="controls">
+                                                        <label class="control-label">Town/City: </label>
+                                                     <input class="form-control" type="text" name="dcity" placeholder="Town/City">
+                                                    </div>
+                                                     
+                                                </div>
+                                                <button type="submit" class="submit check_out">SAVE AND CONTINUE</button>
+                                            </div>
+                                        </section>
+                                    </form>
+                                        <div class="checkout-right-basket">
+                                
+                          </div>
+                        </div>
+                
+                    <div class="clearfix"> </div>
+                    
+                </div>
+    
+            </div>
+    <!-- //about -->
+            </div>
+            <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+    $( document ).ready(function() {
+        var table = document.getElementById('displayTable');
+        let total = 0
+        for(let i = 1; i<table.rows.length; i++){
+            total+=Number(table.rows[i].cells[4].innerText)
+        }
+       // alert(total)
+        const totalInput = document.getElementById('ttls')
+        const totalamt = document.getElementById('ttlamt')
+        totalInput.innerText="₹"+total
+        totalamt.val=total
+    });
+ 
+   
+    </script>
+{% endblock usercontent%}

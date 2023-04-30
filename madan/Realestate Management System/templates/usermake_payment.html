@@ -1,0 +1,91 @@
+{% include 'userheader.html' %}
+<br><br><br><br><br><br><br>
+    <center>
+
+
+        <style type="text/css">
+        td{background-color: transparent;font-weight: 2px;color: black}
+        hr{border-color: orange}
+        #b {
+            border: 1px solid grey; 
+            padding: 10px;
+        }
+    </style>
+
+
+    <div align="center">
+
+        <form method="post">
+            <h2> Payment </h2> <hr> 
+            <table style="width: 400px;" class="table table-borderless" id="b"> 
+                <tr> 
+                    <td><font color="white">PAYMENT DETAILS</font></td> 
+                    <td><img src="/static/uploads/ccard.jpg" style="width:100%"/></td>
+
+                </tr>
+                <tr> 
+                    <td colspan="2"> <small><font color="white">CARD NUMBER</font></small><br> 
+                        <input type="text" placeholder="Enter a valid card number"  class="form-control"  pattern="[0-9]{16}" title="Enter 16 digit Card number">
+                    </td> 
+                </tr>
+                <tr> 
+
+                    <td > <small><font color="white">CVV</small></font><br> 
+                        <input type="password" placeholder="CVV"  class="form-control"  pattern="[0-9]{3}" title="Enter 3 digit CV number">
+                    </td> 
+                    <td> <small><font color="white">EXPIRATION DATE</font></small><br> 
+                        <input type="text" placeholder="MM/YY"  class="form-control"  pattern="[0-9,/]{5}" title="Enter 3 digit CV number"> 
+                    </td>
+
+
+                </tr>
+                <tr> 
+                    <td colspan="2"> <small><font color="white">CARD HOLDER</font></small><br> 
+                        <input type="text" placeholder="Name on card"  class="form-control" data-valid='only-text'  > </td>
+                    </tr>
+                    
+                    <!-- <tr><td colspan="2"> <small>AMOUNT</small><br>
+                    {% for row in data['pay'] %} 
+                     <input type="text" name="amount" placeholder="Amount" value="{{row['om_id']}} " readonly="">{{row['total_amount']}}</td></tr>
+                 
+                    {% endfor %} -->
+                    <tr>
+                      <td colspan="2"> <small><font color="white">Amount</font></small>
+                     <td>{{data['pay'][0]['amount']}}</td>
+
+                       
+                    <tr><td><input type="radio" name="type" value="online" ><font color="white">Pay Online</font><br></td></tr>
+                     <tr>
+                        <td colspan="2"> <small>AMOUNT</small>
+                         {% for row in data['pay'] %} 
+                        <input type="text" name="amount"  value="{{data['pay'][0]['amount']}}" readonly="">
+                        {% endfor %}
+                      </td>
+                    </tr>
+                     
+ 
+                            <!-- <td colspan="2"> 
+                                <input type="submit" value="PAY"  class="btn btn-success" style="width: 100%" name="ADD"> </td>
+                            </tr> -->
+                           <td colspan="2">
+                              <input type="submit" name="submit" value="PAY" class="btn btn-success" style="width: 100%">
+                           </td> 
+                          </tr> 
+                        </table>
+
+
+                    </div>
+                    <div>
+                        <tr>
+                        <input type="hidden" name="oid" value="data['oid']">
+    <td>  <input type="radio" name="type" value="CoD" required=""><font color="white">Cash on Delivery</font><br></td>
+
+</tr>
+<!-- <tr><button name="buy" class="btn btn-success">Buy</button></tr>
+ -->
+                    </div>
+                </form>
+                <hr> 
+            </center>
+    
+{% include 'footer.html' %}        

@@ -1,0 +1,58 @@
+{% include 'adminheader.html'%}
+<br><br><br><br><br><br>
+<body style="background-color: #F0F8FF;">
+	<br><br>
+	<h1 align="center" style="color: Black; text-decoration: underline; font-size: 36px;">Area Management</h1>
+	<form method="post">
+		<table  align="center" class="table" style="width: 700px; background-color: #F5F5F5; padding: 20px; border-radius: 10px;">
+			{% if data['updateprt']%}
+			<tr>
+				<th style="color: black;">Area Name</th>
+				<td><input type="text" name="aname" class="form-control" required="" style="width: 90%; height: 40px; border-radius: 5px;" value="{{data['updateprt'][0]['area_name']}}"></td>
+			</tr>
+			<tr>
+				<th style="color: black;">Area Description</th>
+				<td><textarea name="des" class="form-control" required="" style="width: 90%; height: 140px; border-radius: 5px;">
+					{{data['updateprt'][0]['area_description']}}
+				</textarea></td>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="update" value="Submit" class="btn btn-primary" style="width: 100%; height: 40px; border-radius: 5px;"></td>
+			</tr>
+		</table>
+		{% else %}
+		<table  align="center" class="table" style="width: 40%; background-color: #F5F5F5; padding: 20px; border-radius: 10px;">
+			<tr>
+				<th style="color: black;">Area Name</th>
+				<td><input type="text" name="aname" class="form-control" required="" style="width: 90%; height: 40px; border-radius: 5px;"></td>
+			</tr>
+			<tr>
+				<th style="color: black;">Area Description</th>
+				<td><textarea name="des" class="form-control" required="" style="width: 90%; height: 140px; border-radius: 5px;">
+				</textarea></td>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="submit" value="Submit" class="btn btn-primary" style="width: 100%; height: 40px; border-radius: 5px;"></td>
+			</tr>
+		</table>
+		{% endif %}
+		<br><br><br>
+			<table  align="center" class="table" style="width: 40%; background-color: #F5F5F5; padding: 20px; border-radius: 10px;">
+				<h1 align="center" style="color: black; text-decoration: underline; font-size: 36px;">Area Management</h1>
+				<tr>
+					<th >SL No.</th>
+					<th >Area Name</th>
+					<th >Area Description</th>
+
+					<th>Area Description</font></th>
+				</tr>
+				<tbody>
+					{% for row in data['ara']%}
+					<td>{{loop.index}}</td>
+					<td>{{row['area_name']}}</td>
+					<td>{{row['area_description']}}</td>
+					<td><a href="?action=update&id={{row['area_id']}}" class="btn btn-primary">Update</a></td>
+					<td><a href="?action=delete&id={{row['area_id']}}"  class="btn btn-primary">Delete</a></td>
+				</tbody>
+				{% endfor %}
+			</table>
+		</form>
+{% include 'footer.html'%}

@@ -1,0 +1,134 @@
+{% extends 'hotel/hotelmain.html' %}
+{% load static %}
+
+{% block maincontent %}
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Add  items</h4>
+               
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    {% for message in messages %}
+                    <div class="alert alert-primary" role="alert">
+                        {{ message }}
+                      </div>
+                      {% endfor %}
+                    <form class="form-horizontal"  method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <h4 class="card-title">Add  items</h4>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label">Category</label>
+                                <div class="col-sm-9"><select name="icat"  class="form-control input-default ">
+                                    {% for i in catgris %}
+                                    <option value="{{ i.id }}">{{ i.categorys }}</option>
+                                    {% endfor %}
+                                </select>  </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label">Item Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" required name="iname" id="hname" placeholder="Item Name ">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Price</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" name="iprice" placeholder="Place">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Stock</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" name="istock" placeholder="Stock">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Description</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="idsicp" placeholder="Description">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" class="form-control" name="iimg" placeholder="Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-top">
+                            <div class="card-body">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card">
+                    
+                    <div class="border-top">
+                        
+                    </div>
+                </div>
+                <div class="card">
+                    
+                    <div class="border-top">
+                        
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <!-- editor -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>
+
+
+{% endblock maincontent%}

@@ -1,0 +1,47 @@
+{% include 'farmerheader.html' %}
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<style>
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: white;
+  padding: 10px;
+} 
+.grid-item {
+  background-color: white;
+  padding: 10px;
+  }
+
+</style>
+
+<body>
+  <h1 align="center"> Products</h1>
+  <div class="grid-container">
+    
+      {% for row in data['mach'] %}
+      <!-- <tr>
+        <td><a href="/user/prodetails"> {{row['name']}}</a></td>
+        <td>{{row['category_name']}}</td>
+        <td> -->
+          <div class="grid-item">
+          <a href="/farmer/prodetails?id={{row['machine_id']}}">
+            <img src="/{{row['image']}}" width="500;" height="350px"></img>
+          </a>
+          <br>{{row['machine_name']}}<br>
+          </div>
+        <!-- </td>
+        <td>{{row['price']}}</td>
+        <td>{{row['descr']}}</td>
+      </tr> -->
+      {% endfor %}
+        
+  </div>
+</body>
+
+{% include 'footer.html' %}

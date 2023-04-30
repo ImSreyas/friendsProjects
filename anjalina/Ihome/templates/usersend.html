@@ -1,0 +1,56 @@
+{% include 'userheader.html' %}
+<br><br><br><br><br><br>
+<br>
+<form method="post" enctype="multipart/form-data">
+	<center><h2 style="color: red;">Send Request</h2></center>
+	<table  align="center" style="width: 700px;color: blue;" class="table"  >
+		<tr>
+			<th>Booking Description</th>
+			<td><textarea name="des" required=" " class="form-control" style="width:90%;height: 40px"></textarea></td>
+		</tr>
+		<tr>
+			<th>Work Image1</th>
+			<td><input type="file" name="image" required=" " class="form-control"  style="width:90%;height: 40px"></td>
+		</tr>
+		<tr>
+			<th>Work Image2</th>
+			<td><input type="file" name="imag" required=" " class="form-control"  style="width:90%;height: 40px"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-primary" value="Submit"></td>
+		</tr>
+	</table>
+	<table  align="center" class="table" style="width:90%;background-color:#f1f1c1">
+		<h1 align="center">Booking details</h1>
+			<tr>
+				<th><font color="red">SL No.</font></th>
+				<th><font color="red">User Name</font></th>
+				<th><font color="red">Provider Name</font></th>
+				<th><font color="red">Service Name</font></th>
+				<th><font color="red">Booking Date</th>
+				<th><font color="red">Booking Description</font></th>
+				<th><font color="red">Work Image1</font></th>
+				<th><font color="red">Work Image2</th>
+				<th><font color="red">Booking Status</font></th>
+			</tr>
+			<tbody>
+				{% for row in data['book']%}
+				<td>{{loop.index}}</td>
+				<td>{{row['UNAME']}}</td>
+				<td>{{row['SNAME']}}</td>
+				<td>{{row['service_name']}}</td>
+				<td>{{row['booking_date']}}</td>
+				<td>{{row['booking_description']}}</td>
+				<td><img src="/{{row['work_image1']}}" width="200" height="200"></img></td>
+				<td><img src="/{{row['work_image2']}}" width="200" height="200"></img></td>
+				<td>{{row['booking_status']}}</td>
+				<td><a href="/user/viewproposal?bid={{row['booking_id']}}" class="btn btn-primary">View Proposals</a></td>
+			</tbody>
+			{% endfor %}
+		</table>
+</form>
+<br>
+<br>
+
+
+{% include 'footer.html' %}

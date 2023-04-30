@@ -1,0 +1,143 @@
+{% include 'techeader.html' %}
+    <style type="text/css">
+        /*.container{
+            text-align: center;
+            background-color: rgb(99, 109, 109);
+            padding: 100px;
+        }*/
+        table{
+            width: 50%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        
+        tr{
+        	width: 90%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        td{
+        	width: 90%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+
+        }
+        select{
+            width: 90%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+
+        }
+        input[type=text]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        input[type=file]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        textarea{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+
+        }
+
+        input[type=submit]
+        {
+            width: 20%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+       
+    </style>
+        <body style="background-image: url(/static/images/11.jpg);">
+
+        <form method="post" enctype="multipart/form-data">
+        	<br><br><br>
+        <table  align="Center">
+          <tr class="tr">
+              <th>Category</th>
+              <td class="td">
+                <select name="cname">
+                    
+                    <option>Select</option>
+                    {% for row in data['cat'] %}
+                    <option value="{{row['category_id']}}">{{row['cat_name']}}</option>
+                    {% endfor %}
+                   </select>
+              </td>
+            </tr>
+           	<tr class="tr">
+           		<th>Machine</th>
+           		<td class="td">
+           			<input type="text" name="mname" required="" placeholder="Enter Machine Name">
+           		</td>
+           	</tr>
+           	<tr class="tr">
+           		<th><b>Description</b></th>
+           		<td class="td">
+           			<textarea name="des">
+
+                    </textarea>
+           		</td>
+           	</tr>
+            <tr class="tr">
+              <th>Amount</th>
+              <td class="td">
+                <input type="text" name="amount" required="" placeholder="Enter amount">
+              </td>
+            </tr>
+            <tr class="tr">
+              <th>Image</th>
+              <td class="td">
+                <input type="file" name="img" required="">
+              </td>
+            </tr>
+            <tr class="tr">
+              <th>Available Quantity</th>
+              <td class="td">
+                <input type="text" name="quan" required="" placeholder="Enter Quantity">
+              </td>
+            </tr>
+           	<tr class="tr">
+           		<td colspan="2" align="center" class="td">
+           			<input type="submit" name="submit" value="Add" class="btn btn-primary">
+           		</td>
+           	</tr>
+           </table>
+            
+        </form>
+
+{% include 'footer.html' %}

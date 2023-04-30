@@ -1,0 +1,28 @@
+{% include 'adminheader.html'%}
+<br><br><br><br><br><br><br><br>
+<body>
+	<br><br>
+	<h1 align="center"><font color="red"><u>Reviews/Ratings</u></font></h1>
+	<form method="post">
+		<table  align="center" class="table" style="width:90%;background-color:white;border-radius:15px;">
+			<tr>
+				<th><font color="red">SL No.</font></th>	
+				<th><font color="red">User Name</font></th>
+				<th><font color="red">Provider Name</font></th>
+				<th><font color="red">Review Description</th>
+				<th><font color="red">Ratings</font></th>
+				<th><font color="red">Review Date</font></th>
+			</tr>
+			<tbody>
+				{% for row in data['re']%}
+				<td>{{loop.index}}</td>
+				<td>{{row['UNAME']}}</td>
+				<td>{{row['SNAME']}}</td>
+				<td>{{row['review']}}</td>
+				<td>{{row['ratings']}}</td>
+				<td>{{row['review_date']}}</td>
+			</tbody>
+			{% endfor %}
+		</table>
+	</form>
+{% include 'footer.html'%}

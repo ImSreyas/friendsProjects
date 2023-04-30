@@ -1,0 +1,99 @@
+{% extends "pred_app/base.html" %}
+{% load static %}
+{% block nav %}
+<li>
+    <a href="index">
+        Home
+    </a>
+</li>
+<li>
+    <a href="viewalluser">
+        Users
+    </a>
+</li>
+<li>
+    <a href="logout">
+       Sign Out
+    </a>
+</li>
+{% endblock nav %}
+{% block content %}
+<div class="content">
+    <div class="article">
+        {% comment %} <h2>
+            <span>
+                To Contact Us
+            </span>
+        </h2> {% endcomment %}
+        <div class="clr">
+        </div>
+    </div>
+    <div class="article">
+        {% comment %} <h2>
+            <span>
+                Send us
+            </span>
+            mail
+        </h2> {% endcomment %}
+        <div class="clr">
+        </div>
+<html>
+    <head>
+
+    </head>
+    <style type="text/css">
+        table{
+            border: 1px solid gray;
+            width: 80%;
+            padding: 10px;
+        }
+        tr{
+            border: 1px solid gray;
+            padding: 10px;
+        }
+        th{
+            border: 1px solid gray;
+            padding: 10px;
+            text-align: center;
+        }
+        td{
+            border: 1px solid gray;
+            padding: 10px;
+        }
+    
+    
+    </style>
+    <body>
+        <h1 align="center">Registered Users</h1>
+        <table align="center">
+            <form method="POST">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{i.first_name}}</td>
+                <td>{{i.last_name}}</td>
+                <td>{{i.email}}</td>
+                <td>
+                    {% if i.is_active %}
+                    Active
+                    {% else %}
+                    Inactive
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{% url 'inactiveuser' id=i.id %}" class="btn btn-primary" style="text-decoration:none;">Active/InActive</a></td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+    </body>
+</html>
+
+</div>
+</div>
+{% endblock content %}

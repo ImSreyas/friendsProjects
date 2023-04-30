@@ -1,0 +1,40 @@
+{% include 'adminheader.html'%}
+<br><br><br><br><br><br><br><br>
+<body>
+	<br><br>
+	<h1 align="center"><font color="red"><u>Users</u></font></h1>
+	<form method="post" class="d-flex justify-content-center">
+		<div style="border-radius: 15px; background-color: white; padding: 20px;width:90%;">
+			<table align="center" style="width: 100%;">
+				<thead>
+					<tr>
+						<th><font color="red">SL No.</font></th>
+						<th><font color="red">Name</font></th>
+						<th><font color="red">Area Name</font></th>
+						<th><font color="red">House Name</th>
+						<th><font color="red">Place</font></th>
+						<th><font color="red">Pincode</font></th>
+						<th><font color="red">District</th>
+						<th><font color="red">Contact</font></th>
+						<th><font color="red">Email</font></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for row in data['us']%}
+					<tr>
+						<td>{{loop.index}}</td>
+						<td>{{row['NAME']}}</td>
+						<td>{{row['area_name']}}</td>
+						<td>{{row['house_name']}}</td>
+						<td>{{row['place']}}</td>
+						<td>{{row['pincode']}}</td>
+						<td>{{row['district']}}</td>
+						<td>{{row['contact']}}</td>
+						<td>{{row['email']}}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</form>
+{% include 'footer.html'%}

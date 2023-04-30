@@ -1,0 +1,42 @@
+{% include 'provider_header.html' %}
+<br><br><br><br><br><br><br><br>
+<form method="post" enctype="multipart/form-data">
+	<center><h2 style="color: red;">Add Products</h2></center>
+	<table  align="center" style="width: 40%;color: blue;" class="table" >
+		<tr>
+			<th bgcolor="powdergreen">Shop Name</th>
+			<td>
+				<select name="sname" style="width: 90%;" class="form-control">
+					<option selected="" readonly>Select</option>
+					{% for row in data['sh'] %}
+					<option value="{{row['shop_id']}}">{{row['shop_name']}}</option>
+					{% endfor %}
+				</select>
+			</td>
+		</tr>
+		<tr>
+				<th bgcolor="powdergreen">Product Name</font></th>
+				<td><input type="text" name="pname" class="form-control" required="" style="width:90%;height: 40px"></td>
+			</tr>
+			<tr>
+				<th bgcolor="powdergreen">Image</font></th>
+				<td><input type="file" name="image" class="form-control" required="" style="width:90%;height: 40px"></td>
+			</tr>
+			<tr>
+				<th bgcolor="powdergreen">Amount</font></th>
+				<td><input type="text" name="amount"  class="form-control" required="" style="width:90%;height: 40px"></td>
+			</tr>
+			<tr>
+				<th bgcolor="powdergreen">Stock</font></th>
+				<td><input type="text" name="stock"  class="form-control" required="" style="width:90%;height: 40px"></td>
+			</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-primary" value="Submit"></td>
+		</tr>
+	</table>
+	
+
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

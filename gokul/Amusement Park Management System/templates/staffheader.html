@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+Template Name: Surogou
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Surogou-Amusement</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/static/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_left">
+      <ul class="nospace">
+       <!--  <li><a href="index.html"><i class="fas fa-home fa-lg"></i></a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/customer_register">Register</a></li> -->
+      </ul>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace">
+        <li><i class="fas fa-phone rgtspace-5"></i> +00 (123) 456 7890</li>
+        <li><i class="fas fa-envelope rgtspace-5"></i> info@domain.com</li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="one_half first">
+      <h1 class="logoname"><a href="index.html"><span>Amusement</span>Park</a></h1>
+    </div>
+    <div class="one_half">
+      <ul class="nospace clear">
+        <li class="one_half first">
+          <div class="block clear"><i class="fas fa-phone"></i> <span><strong class="block">Call Us:</strong> +00 (123) 456 7890</span> </div>
+        </li>
+        <li class="one_half">
+          <div class="block clear"><i class="far fa-clock"></i> <span><strong class="block"> Mon. - Sat.:</strong> 08.00am - 18.00pm</span> </div>
+        </li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </header>
+  <nav id="mainav" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+      <li class="active"><a href="/staff/staffhome">Home</a></li>
+      <li><a class="drop" href="#">Manage</a>
+        <ul>
+          <li><a href="/staff/manage_ridelist">Ride List</a></li>
+        </ul>
+      </li>
+      <li><a class="drop" href="#">View</a>
+        <ul>
+         
+          <li><a href="/staff/view_pricelist">Price List</a></li>
+           <li><a href="/staff/view_booking">Bookings</a></li>
+          
+          <li><a href="/staff/view_responses">Reviews</a></li>
+        </ul>
+      </li>
+      <li class="active"><a href="/">Sign Out</a></li>
+
+    
+  </nav>
+</div>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+    {% for message in messages %}
+    <script>alert("{{ message }}")</script>
+    {% endfor %}
+
+    {% endif %}
+    {% endwith %}

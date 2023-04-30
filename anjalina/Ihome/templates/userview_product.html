@@ -1,0 +1,37 @@
+{% include 'userheader.html' %}
+<br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Products</h2></center>
+	<table  align="center" style="width: 700px;color: blue;" class="table" >
+		<tr>
+			<th bgcolor="powdergreen">Provider Name</th>
+			<th bgcolor="powdergreen">Shop Name</th>
+			<th bgcolor="powdergreen">Product Name</th>
+			<th bgcolor="powdergreen">Image</th>
+			<th bgcolor="powdergreen">Amount</th>
+			
+		</tr>
+		<tbody>
+			{% for row in data['pr'] %}
+			<tr>
+				<td>{{row['NAME']}}</td>			
+				<td>{{row['shop_name']}}</td>
+				<td>{{row['product_name']}}</td>
+				<td><img src="/{{row['image']}}" width="200" height="200"></td>
+				<td>{{row['amount']}}</td>
+				<td>
+					<a href="/user/addto_cart?id={{row['product_id']}}" class="btn btn-primary">Add to Cart</a>
+				</td>
+				<td>
+					<a href="/user/buy_product?id={{row['product_id']}}" class="btn btn-primary">Buy Product</a>
+				</td>
+			</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

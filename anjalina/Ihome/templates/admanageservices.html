@@ -1,0 +1,69 @@
+{% include 'adminheader.html' %}
+<br><br><br><br><br><br><br><br>
+
+<body>
+  <div class="container">
+    <br><br>
+    <h1 align="center"><u>Service Type Management</u></h1>
+    <form method="post">
+      <div class="form-group" style="background-color: #f5f5f5; padding: 20px; border-radius: 10px;">
+        {% if data['updateprt'] %}
+        <div class="form-group row">
+          <label for="sname" class="col-sm-3 col-form-label" style="color: #d32f2f">Service Type Name</label>
+          <div class="col-sm-9">
+            <input type="text" name="sname" class="form-control" required="" style="height: 40px" value="{{data['updateprt'][0]['service_type_name']}}">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="des" class="col-sm-3 col-form-label" style="color: #d32f2f">Service Description</label>
+          <div class="col-sm-9">
+            <textarea name="des" class="form-control" required="" style="height: 140px">{{data['updateprt'][0]['service_type_description']}}</textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12 text-center">
+            <button type="submit" name="update" class="btn btn-danger" style="width: 100px;">Submit</button>
+          </div>
+        </div>
+        {% else %}
+        <div class="form-group row">
+          <label for="sname" class="col-sm-3 col-form-label" style="color: #d32f2f">Service Type Name</label>
+          <div class="col-sm-9">
+            <input type="text" name="sname" class="form-control" required="" style="height: 40px">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="des" class="col-sm-3 col-form-label" style="color: #d32f2f">Service Description</label>
+          <div class="col-sm-9">
+            <textarea name="des" class="form-control" required="" style="height: 140px"></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12 text-center">
+            <button type="submit" name="submit" class="btn btn-danger" style="width: 100px;">Submit</button>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <br><br><br>
+      <div class="table-responsive" style="background-color: #f5f5f5; padding: 20px; border-radius: 10px;">
+        <h1 align="center" ><u>Service Type Management</u></h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>SL No.</th>
+              <th>Service Type Name</th>
+					<th>Service Description</font></th>
+				</tr>
+				<tbody>
+					{% for row in data['sr']%}
+					<td>{{loop.index}}</td>
+					<td>{{row['service_type_name']}}</td>
+					<td>{{row['service_type_description']}}</td>
+					<td><a href="?action=update&id={{row['service_type_id']}}" class="btn btn-primary">Update</a></td>
+					<td><a href="?action=delete&id={{row['service_type_id']}}" class="btn btn-primary">Delete</a></td>
+				</tbody>
+				{% endfor %}
+			</table>
+		</form>
+{% include 'footer.html'%}

@@ -1,0 +1,47 @@
+{% include 'provider_header.html' %}
+<br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Services</h2></center>
+	<table  align="center" style="width: 80%;color: blue;" class="table" >
+		<tr>
+			<th bgcolor="powdergreen">Service Name</th>
+			<td>
+				<select name="sname" class="form-control" style="width: 80%;">
+					<option selected="" readonly>Select</option>
+					{% for row in data['selservicetypes'] %}
+					<option value="{{row['service_type_id']}}">{{row['service_type_name']}}</option>
+					{% endfor %}
+				</select>
+			</td>
+		</tr>
+		<tr>
+				<th bgcolor="powdergreen">Service Name</font></th>
+				<td><input type="text" name="ser" class="form-control" required="" style="width:80%;height: 40px"></td>
+			</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-primary" value="Submit"></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<table  align="center" style="width: 40%;color: blue;" class="table"  >
+		<tr>
+			<th bgcolor="powdergreen">Service Type</th>
+			<th bgcolor="powdergreen">Service Name</th>
+		</tr>
+		<tbody>
+			{% for row in data['servicetypes'] %}
+			<tr>
+				<td>{{row['service_type_name']}}</td>
+				<td>{{row['service_name']}}</td>
+				<td><a href="?action=delete&id={{row['service_id']}}" class="btn btn-primary">Delete</a></td>
+			</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

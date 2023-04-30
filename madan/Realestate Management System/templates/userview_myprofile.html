@@ -1,0 +1,186 @@
+{% include 'userheader.html'%}
+<style type="text/css">
+        
+        table{
+            width: 50%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        th{
+            width: 20%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        tr{
+        	width: 90%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        td{
+        	width: 90%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+
+        }
+        input[type=text]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+
+        }
+        textarea{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            height: 80px;
+
+        }
+
+        input[type=password]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+
+        }
+        input[type=email]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+
+        }
+        
+        input[type=submit]
+        {
+            width: 20%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+       
+    </style>
+<body style="background: pink">
+	
+	<h1 align="center"><font color="white"><u>My Profile</u></font></h1>
+	<form method="post">
+       
+           <table  align="Center">
+            {% if data['updateprt'] %}
+            <tr class="tr">
+                <th>First Name</th>
+                <td class="td">
+                    <input type="text" name="fname" value="{{data['updateprt'][0]['firstname']}}">
+                </td>
+            </tr>
+            <tr class="tr">
+                <th>Last Name</th>
+                <td class="td">
+                    <input type="text" name="lname" value="{{data['updateprt'][0]['lastname']}}">
+                </td>
+            </tr>
+            <tr class="tr">
+                <th>Gender</th>
+                <td class="td">
+                    <input type="text" name="gender" value="{{data['updateprt'][0]['gender']}}"> 
+                </td>
+            </tr>
+            <tr class="tr">
+                <th>Address</th>
+                <td class="td">
+                    <textarea name="address">{{data['updateprt'][0]['address']}}</textarea>
+                </td>
+            </tr>
+            
+                <tr class="tr">
+                <th>Phone</th>
+                <td class="td">
+                    <input type="text" name="phone" value="{{data['updateprt'][0]['phone']}}" pattern="[0-9]{10}">
+                </td>
+            </tr>
+                <tr class="tr">
+                <th>Email</th>
+                <td class="td">
+                    <input type="email" name="email" value="{{data['updateprt'][0]['email']}}">
+                </td>
+            </tr>
+               <tr class="tr">
+                <th>Place</th>
+                <td class="td">
+                    <input type="text" name="place" value="{{data['updateprt'][0]['place']}}">
+                </td>
+            </tr>
+               <tr class="tr">
+                <th>Pincode</th>
+                <td class="td">
+                    <input type="text" name="pincode" value="{{data['updateprt'][0]['pincode']}}" pattern="[0-9]{6}">
+                </td>
+            </tr>
+               <tr class="tr">
+                <td colspan="2" align="center" class="td">
+                    <input type="submit" name="update" value="Edit" class="btn btn-primary">
+                </td>
+            </tr>
+            
+        </table>
+        {% else %}
+		<br><br><br><br><br><br>
+	<table  align="center" class="table" style="width:700px;height: 200px;">
+			<tr>
+				<th><font color="white">Name</font></th>
+				<th><font color="white">Address</font></th>
+				<th><font color="white">Gender</font></th>
+				<th><font color="white">Place</font></th>
+				<th><font color="white">Phone</font></th>
+				<th><font color="white">Email</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['cus']%}
+			<td><font color="white"><b>{{row['NAME']}}</b></font></td>
+			<td><font color="white"><b>{{row['address']}}</b></font></td>
+			<td><font color="white"><b>{{row['gender']}}</b></font></td>
+			<td><font color="white"><b>{{row['place']}}</b></font></td>
+			<td><font color="white"><b>{{row['phone']}}</b></font></td>
+			<td><font color="white"><b>{{row['email']}}</b></font></td>
+			<td>
+				<a href="?action=delete&id={{row['customer_id']}}&id1={{row['login_id']}}" class="btn btn-primary">Delete</a>
+			</td>
+			<td>
+				<a href="?action=update&id={{row['customer_id']}}"class="btn btn-primary">Update</a>
+			</td>
+		</tbody>
+		{% endfor %}
+	</table>
+    {% endif %}			
+
+	</form>
+<br><br><br><br>
+{% include 'footer.html'%}

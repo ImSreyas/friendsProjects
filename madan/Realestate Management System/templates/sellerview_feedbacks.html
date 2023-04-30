@@ -1,0 +1,36 @@
+{% include 'sellerheader.html'%}
+<body style="background: pink">
+	<h1 align="center"><font color="white"><u>Reviews</u></font></h1>white
+	<form method="post">
+			<br><br><br>
+	<table  align="center" class="table" style="width:700px;">
+			<tr>
+				<th><font color="white">Date</font></th>
+				<th><font color="white">Customer Name</font></th>
+				<th><font color="white">Feedback</font></th>
+				<th><font color="white">Reply</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['feed']%}
+			<td><font color="white"><b>{{row['date']}}</b></font></td>
+			<td><font color="white"><b>{{row['NAME']}}</b></font></td>
+			<td><font color="white"><b>{{row['feedback']}}</b></font></td>
+			{% if row['reply']=="pending" %}
+				<td>
+					<textarea name="reply{{loop.index}}"></textarea>
+					<input type="submit" name="submit{{loop.index}}" value="submit">
+				</td>
+				{% else %}
+				<td><font color="white"><b>{{row['reply']}}</b></font></td>
+				{% endif %}
+			<td>
+				<a href="?action=delete&id={{row['feedback_id']}}" class="btn btn-primary">Delete</a>
+			</td>
+		</tbody>
+		{% endfor %}
+	</table>
+			
+
+	</form>
+<br><br><br><br>
+{% include 'footer.html'%}

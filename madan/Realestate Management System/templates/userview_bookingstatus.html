@@ -1,0 +1,24 @@
+{% include 'userheader.html'%}
+<body style="background: pink">
+	
+	<h1 align="center"><font color="white">Booking Status</font></h1>
+	<form method="post">
+		<br><br><br>
+	<table  align="center" class="table" style="width:700px;height: 200px;">
+			<tr>
+				<th><font color="white">Date</font></th>
+				<th><font color="white">Customer Name</font></th>
+				<th><font color="white">Status</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['book']%}
+			<td><font color="white"><b>{{row['date']}}</b></font></td>
+			<td><font color="white"><b>{{row['NAME']}}</b></font></td>
+			<td><font color="white"><b>{{row['status']}}</b></font></td>
+			<td><a href="/user/make_payment?id={{row['booking_id']}}" class="btn btn-primary">Make Payment</a></td>
+		</tbody>
+		{% endfor %}
+	</table>
+	</form>
+<br><br><br><br>
+{% include 'footer.html'%}

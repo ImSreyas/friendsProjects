@@ -1,0 +1,148 @@
+{%extends 'base.html'%}
+{% block title %}  Prediction  {% endblock %}
+{%block content%}
+	<!-- banner 2 -->
+	<div class="inner-banner-w3ls">
+		<div class="container">
+
+		</div>
+		<!-- //banner 2 -->
+	</div>
+
+
+<!-- contact -->
+<div class="agileits-contact py-5">
+  <div class="py-xl-5 py-lg-3">
+    <div class="w3ls-titles text-center mb-5">
+      <h3 class="title" style="font-family:Italic;color:green"><b>Diabetic Cancer Prediction</b></h3>
+      <span>
+        <i class="fas fa-user-md"></i>
+      </span>
+      <hr />
+      {% if context %}
+      <div class="display-4 my-2 text-center">
+        <p style="color:red;font-size:80%"><b>RESULT:</b></p>Your Stress Level is {{ context }}
+      </div>
+      {% endif %}
+    </div>
+    <div class="d-flex">
+      <div class="col-lg-5 w3_agileits-contact-left">
+      </div>
+      <div class="col-lg-7 contact-right-w3l">
+        <h5 class="title-w3 text-center mb-5" style="font-family:Italic">Get In Touch</h5>
+        <!-- start from here -->
+
+        <form class="row" method="POST" action="{% url 'diabetes' %}">
+          {% csrf_token %}
+          <div class="col-md-6">
+            <label style="color: black;" >Body Weak</label>
+            <div class="form-group">
+
+              <input
+                type="number"
+                class="form-control"
+                id="pregnancies"
+                placeholder="0"
+                name="pregnancies"
+              />
+            </div>
+            <label style="color: black;" >Glucose</label>
+            <div class="form-group">
+
+              <input
+                type="number"
+                class="form-control"
+                id="glucose"
+                placeholder="0"
+                name="glucose"
+              />
+            </div>
+            <label style="color: black;" >Blood Pressure</label>
+            <div class="form-group">
+
+              <input
+                type="number"
+                class="form-control"
+                id="bloodpressure"
+                placeholder="0"
+                name="bloodpressure"
+              />
+            </div>
+            <label style="color: black;" >Skin Thickness</label>
+            <div class="form-group">
+
+              <input
+                type="number"
+                class="form-control"
+                id="skinthickness"
+                placeholder="0"
+                name="skinthickness"
+              />
+            </div>
+            <label style="color: black;" >Level</label>
+            <div class="form-group">
+
+              <input
+
+                type="number"
+                class="form-control"
+                id="insulin"
+                placeholder="0"
+                name="insulin"
+              />
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label style="color: black;" >Body Mass Index</label>
+            <div class="form-group">
+
+              <input
+
+                type="number"
+                step=".00001"
+                class="form-control"
+                id="bmi"
+                placeholder="0"
+                name="bmi"
+              />
+            </div>
+            <label style="color: black;" >Prediction Function</label>
+            <div class="form-group">
+
+              <input
+
+                type="number"
+                step=".001"
+                class="form-control"
+                id="pedigree"
+                placeholder="0"
+                name="pedigree"
+              />
+            </div>
+
+            <label style="color: black;" >Age</label>
+            <div class="form-group mb-5">
+
+              <input
+
+                type="number"
+                class="form-control"
+                id="age"
+                placeholder="0"
+                name="age"
+              />
+            </div>
+            <button type="submit" class="btn-lg btn-block btn btn-primary mb-5" style="background-color: green">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //contact -->
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% include 'adminheader.html'%}
+<br><br><br><br><br><br><br><br>
+<body>
+	<br><br>
+	<h1 align="center"><font color="red"><u>Payment</u></font></h1>
+	<form method="post">
+		<table  align="center" class="table" style="width:90%;background-color:white;padding:5px;border-radius:15px;">
+			<tr>
+				<th><font color="red">SL No.</font></th>
+				<th><font color="red">Payment Date</font></th>
+				<th><font color="red">Name</font></th>
+				<th><font color="red">Amount Paid</font></th>
+			</tr>
+			<tbody>
+				{% for row in data['pay']%}
+				<td>{{loop.index}}</td>
+				<td>{{row['payment_date']}}</td>
+				<td>{{row['NAME']}}</td>
+				<td>{{row['amount_paid']}}</td>
+			</tbody>
+			{% endfor %}
+		</table>
+	</form>
+{% include 'footer.html'%}

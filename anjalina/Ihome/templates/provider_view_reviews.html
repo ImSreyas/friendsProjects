@@ -1,0 +1,32 @@
+{% include 'provider_header.html' %}
+<br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Reviews and Ratings</h2></center>
+	<table  align="center" style="width: 90%;color: blue;" class="table"  >
+		<tr>
+			<th bgcolor="powdergreen">User Name</th>
+			
+			<th bgcolor="powdergreen">Description</th>
+			<th bgcolor="powdergreen">Rating</th>
+			<th bgcolor="powdergreen">Review Date</th>
+			
+		</tr>
+		<tbody>
+			{% for row in data['viewratings'] %}
+			<tr>
+				<td>{{row['uname']}}</td>
+				
+				<td>{{row['review']}}</td>
+				<td>{{row['ratings']}}</td>
+				<td>{{row['review_date']}}</td>
+				
+			</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

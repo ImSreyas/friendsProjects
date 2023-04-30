@@ -1,0 +1,71 @@
+<!-- footer -->
+	<div class="footer">
+		<div class="container"> 
+			<div class="col-md-4 w3_footer_grid">
+				<h3>About Us</h3>
+				<p> Among the popular training systems found in Indian grape vineyards include Bower, ‘T’ system (telephone head), Kniffin, and Head systems. However, more than 70% of growers prefer equipping their field with Bower because of its great performance. Here are popular training systems in India.</p>
+			</div>
+			<div class="col-md-3 w3_footer_grid">
+				<h3>Navigation</h3>
+				<ul>
+					<li class="active"><i class="fa fa-long-arrow-right" aria-hidden="true"></i><a href="index.html">Home</a></li>
+					<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i><a href="services.html">Services</a></li>
+					<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i><a href="gallery.html">Gallery</a></li>
+					<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i><a href="mail.html">Mail Us</a></li>
+				</ul>
+			</div>
+			<div class="col-md-5 w3_footer_grid">
+				<h3>Newsletter</h3>
+				<form action="#" method="post">
+					<input type="email" name="email" placeholder="Your email..." required="">
+					<input type="submit" value=" ">
+				</form>
+				<p>Sign up now for more information about our <span>Farmland</span></p>
+			</div>
+			<div class="clearfix"> </div>
+			<div class="w3layouts_footer_grid">
+				<div class="w3layouts_footer_grid_left">
+					<h2><a href="index.html"><span>F</span>armland</a></h2>
+				</div>
+				<div class="w3layouts_footer_grid_right">
+					<p>© 2021 Farmland. All rights reserved | Design by <a href="http://w3layouts.com/">Revivel</a></p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>	
+<!-- //footer -->
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smooth-scrolling -->
+<!-- for bootstrap working -->
+	<script src="/static/js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+</html>

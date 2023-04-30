@@ -1,0 +1,35 @@
+{% include 'sellerheader.html'%}
+<body style="background: pink">
+	
+	<h1 align="center"><font color="white">Enquires</font></h1>
+	<form method="post">
+		<br><br><br>
+	<table  align="center" class="table" style="width:700px;height: 200px;">
+			<tr>
+				<th><font color="white">Date</font></th>
+				<th><font color="white">Customer Name</font></th>
+				<th><font color="white">Status</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['book']%}
+			<td><font color="white"><b>{{row['date']}}</b></font></td>
+			<td><font color="white"><b>{{row['NAME']}}</b></font></td>
+			{% if row['status']=='booked' %}
+					<td>
+						<a href="/seller/view_enquires?id={{row['customer_id']}}&id1={{row['booking_id']}}" style="text-decoration: none" class="btn btn-primary">Accept</a>
+					</td>
+					<td>
+						<a href="/seller/view_enquires?id={{row['customer_id']}}&id2={{row['booking_id']}}" style="text-decoration: none" class="btn btn-primary">Reject</a>
+					</td>
+					{% else %}
+					<td><font color="white"><b>{{row['status']}}
+						{% endif %}
+		</tbody>
+		{% endfor %}
+	</table>
+			
+
+	</form>
+<br><br><br><br>
+
+{% include 'footer.html'%}

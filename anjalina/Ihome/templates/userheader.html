@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>IHome</title>
+	
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Intrend Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+	
+	<link href="/static/css/slider.css" type="text/css" rel="stylesheet" media="all"> 
+	
+	<!-- css files -->
+	<link rel="stylesheet" href="/static/css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="/static/css/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	
+	<!-- testimonials css -->
+	<link rel="stylesheet" href="/static/css/flexslider.css" type="text/css" media="screen" property="" /><!-- flexslider css -->
+	<!-- //testimonials css -->
+
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=TimesNewRoman+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+	<!-- //web-fonts -->
+	
+</head>
+
+<body style="background-image: linear-gradient(to right top, #e54af8, #c15fff, #9c6cff, #7475fe, #497bf6);">
+<!-- banner -->
+	<div class="banner" id="home"> 
+		<div class="cd-radial-slider-wrapper"> 
+		   
+<!--Header-->
+<header>
+	<div class="container agile-banner_nav">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			
+			<h1><a class="navbar-brand" href="/">In <span class="display"> IHOME</span></a></h1>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+		<!-- <a href="">Home</a>
+<a href="">Manage Services</a>
+<a href="">View Requests</a>
+<a href="">View Reviews and Ratings</a>
+<a href="/">Logout</a> -->
+
+			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="userhome">Home <span class="sr-only">(current)</span></a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="userview_product">Products</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="useradd_request"> Request</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="sendcomplaint">Complaint</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="addratings">Ratings</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="order_status">Order Status</a>
+					</li>
+					
+					<!-- <li class="dropdown nav-item">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Manage
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu agile_short_dropdown">
+							<li>
+								<a href="/admin/admanagearea">Area</a>
+							</li>
+							<li>
+								<a href="/admin/admanageservicetype">Service Types</a>
+							</li>
+						</ul>
+					</li> -->
+					
+					<!-- <li class="nav-item">
+						<a class="nav-link" href="projects.html">Projects</a>
+					</li> -->
+					<li class="nav-item">
+						<a class="nav-link" href="/">Logout</a>
+					</li>
+				</ul>
+			</div>
+		  
+		</nav>
+	</div>
+</header>
+
+
+ {% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+        <script> alert ("{{ message }}")</script>
+      {% endfor %}
+   {% endif %}
+{% endwith %}

@@ -1,0 +1,32 @@
+{% include 'adminheader.html' %}
+<br><br><br><br><br><br><br>
+	<h1 align="center"><u><font color="red">Manage Complaints</font></u></h1>
+	<form method="post">
+		<table   align="center" style="width:90%;background-color:white;border-radius:15px;" class="table">
+			<tr>
+				<th><font color="red">SL No.</font></th>
+				<th><font color="red">Date</font></th>
+				<th><font color="red">Name</font></th>
+				<th><font color="red">Complaint</font></th>
+				<th><font color="red">Solution</font></th>				
+			</tr>
+			<tbody>
+			{% for row in data['com'] %}
+				<tr>
+					<td>{{loop.index}}</td>
+					<td>{{row['complaint_date']}}</td>
+					<td>{{row['NAME']}}</td>
+					<td>{{row['complaint_description']}}</td>
+					{% if row['reply'] == "pending" %}
+				
+					<td><textarea name="reply{{loop.index}}"></textarea><input type="submit" class=" ml-3 btn btn-primary" name="submit{{loop.index}}" value="submit"></td>
+
+					{% else %}
+					<td>{{row['reply']}}</td>
+					
+					{% endif %}				
+			</tbody>
+			{% endfor %}
+		</table>
+	</form>	
+{% include 'footer.html' %}

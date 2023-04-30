@@ -1,0 +1,44 @@
+{% include 'provider_header.html' %}
+<br><br><br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Proposal</h2></center>
+	<table  align="center" style="width: 700px;color: blue;" class="table" >
+		<tr>
+			<th bgcolor="powdergreen">Proposal Description</th>
+			<td><textarea name='des' required=" " class="form-control"></textarea> </td>
+		</tr>
+		<tr>
+			<th bgcolor="powdergreen">Estimated Amount</th>
+			<td><input type="text" name="amount" required=" " class="form-control" ></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-primary" value="Send"></td>
+		</tr>
+	</table>
+	<br>
+<br>
+	<table  align="center" style="width: 40%;color: blue;" class="table"  >
+		<tr>
+			<th bgcolor="powdergreen">Proposal Description</th>
+			<th bgcolor="powdergreen">Estimated Amount </th>
+			<th bgcolor="powdergreen">Date</th>
+			<th bgcolor="powdergreen">Status</th>
+<!-- 			<th bgcolor="powdergreen"></th>
+ -->		</tr>
+		<tbody>
+			{% for row in data['viewproposal'] %}
+			<tr>
+				<td>{{row['proposal_description']}}</td>
+				<td>{{row['estimated_amount']}}</td>
+				<td>{{row['date']}}</td>
+				<td>{{row['status']}}</td>
+				<td><a href="viewpayment?pid={{row['proposal_id']}}&bid={{row['booking_id']}}" class="btn btn-primary">viewpayment</a></td>
+			</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

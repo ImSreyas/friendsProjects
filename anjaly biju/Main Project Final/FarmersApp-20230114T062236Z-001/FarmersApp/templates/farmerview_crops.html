@@ -1,0 +1,23 @@
+{% include 'farmerheader.html'%}
+<body style="background: pink">
+	<br><br><br>
+	<h1 align="center"><font color="black">Crop Details</font></h1>
+	<form method="post">
+
+	<table  align="center" class="table" style="width:700px;">
+			<tr>
+				<th><font color="black">Crop Name</font></th>
+				<th><font color="black">Description</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['cr']%}
+			<td><font color="black"><b>{{row['crop_name']}}</b></font></td>
+			<td><font color="black"><b>{{row['description']}}</b></font></td>
+		</tbody>
+		{% endfor %}
+	</table>
+			
+
+	</form>
+<br><br><br><br>
+{% include 'footer.html'%}

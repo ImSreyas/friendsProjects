@@ -1,0 +1,38 @@
+{% include 'farmerheader.html' %}
+<br><br><br><br><br><br><br><br>
+<style type="text/css">
+	input[type="file"] {
+   border: 1px solid #ccc;
+   padding: 5px;
+   background-color: #f0f0f0;
+   border-radius: 3px;
+   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type="submit"] {
+   background-color: #4CAF50;
+   border: none;
+   color: white;
+   padding: 10px 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+</style>
+<body>
+	<h1 align="center">Predict Plant Disease</h1>
+	<br><br>
+	<form  method="post" enctype="multipart/form-data">
+		<center>
+   <input type="file" name="image" id="image">
+   <br>
+   <input type="submit" value="Upload Image" name="submit">
+</center>
+</form>
+
+</body>
+<br><br><br><br>
+{% include 'footer.html' %}

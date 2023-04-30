@@ -1,0 +1,5 @@
+scikit-learn
+pandas
+psycopg2-binary
+django-bootstrap-form
+django-crispy-forms

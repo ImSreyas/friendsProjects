@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	package="com.food.ordering.zinger">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+	<application
+		android:name=".zingerapp"
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:roundIcon="@mipmap/ic_launcher_round"
+		android:supportsRtl="true"
+		android:theme="@style/AppTheme"
+		android:usesCleartextTraffic="true"
+		tools:ignore="GoogleAppIndexingWarning">
+		<activity android:name=".ui.contributors.ContributorsActivity" />
+		<activity android:name=".ui.contactus.ContactUsActivity" />
+		<activity android:name=".ui.webview.WebViewActivity" />
+		<activity android:name=".ui.payment.PaymentActivity" />
+		<activity android:name=".ui.placeorder.PlaceOrderActivity" />
+		<activity android:name=".ui.order.OrderDetailActivity" />
+		<activity android:name=".ui.order.OrdersActivity" />
+		<activity android:name=".ui.search.SearchActivity" />
+		<activity
+			android:name=".ui.profile.ProfileActivity"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".ui.signup.SignUpActivity"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".ui.otp.OtpActivity"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name=".ui.login.LoginActivity"
+			android:windowSoftInputMode="adjustResize">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".ui.cart.CartActivity" />
+		<activity android:name=".ui.restaurant.RestaurantActivity" />
+		<activity android:name=".ui.home.HomeActivity" />
+		<activity android:name=".ui.contributors.ContributorDetailActivity" />
+
+		<meta-data
+			android:name="preloaded_fonts"
+			android:resource="@array/preloaded_fonts" />
+
+		<service
+			android:name=".services.ZingerFirebaseMessagingService"
+			android:exported="false">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
+
+	</application>
+
+</manifest>

@@ -1,0 +1,79 @@
+{% include 'adminheader.html' %}
+<br><br><br><br><br>
+<style>
+.grid-container{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	background-color: white;
+	padding: 30px;
+	grid-row-gap: 5px;
+	grid-column-gap: 10px;
+}	
+.grid-item {
+	background-color: white;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 20px;
+	text-align: center;
+	}
+
+table{
+	background-color: lightyellow;
+	padding: 30px;
+	text-align: center;
+
+	}
+td{
+	width:50%;
+	padding: 20px;
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+}
+tr{
+	width:50%;
+	padding: 20px;
+
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+}
+input[type=text]{
+	width:95%;
+	padding: 20px;
+
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+/*	border:1px solid black;
+*/}
+	input[type=submit]{
+	width:95%;
+	padding: 20px;
+
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+}
+</style>
+    <body style="background-color: gray;">
+    	<form method="post">
+    	<h1 align="center"> <font size="30">Users Profile</font></h1>
+	<div class="grid-container">
+		
+			{% for row in data['us'] %}
+					<div class="grid-item">
+						<h3><b>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['NAME']}}</b></h3><br>
+						<h3><b>Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['gender']}}</b></h3><br>
+						<h3><b>Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['address']}}</b></h3><br>
+						<h3><b>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['email']}}</b></h3><br>
+						<h3><b>Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['phone']}}</b></h3><br>
+						
+						<a href="?action=delete&id1={{row['login_id']}}&id={{row['user_id']}}" class="btn btn-sm btn-danger" style="text-decoration: none; size: width=350px; height: 40px; padding:10px;">Delete Account</a>
+					</div>
+			{% endfor %} 
+	</div>
+</form>
+</body>
+
+{% include 'footer.html' %}

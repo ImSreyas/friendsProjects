@@ -1,0 +1,28 @@
+{% include 'farmerheader.html'%}
+<body style="background: pink">
+	<br><br><br>
+	<h1 align="center"><font color="black"><u>Complaints</u></font></h1>
+	<form method="post">
+
+	<table  align="center" class="table" style="width:700px;">
+			<tr>
+				<th><font color="black">Date</font></th>
+				<th><font color="black">Farmer Name</font></th>
+				<th><font color="black">Complaint</font></th>
+				<th><font color="black">Reply</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['com']%}
+			<td><font color="black"><b>{{row['date']}}</b></font></td>
+			<td><font color="black"><b>{{row['NAME']}}</b></font></td>
+			<td><font color="black"><b>{{row['complaint']}}</b></font></td>
+			<td><font color="black"><b>{{row['reply']}}</b></font></td>
+			
+		</tbody>
+		{% endfor %}
+	</table>
+			
+
+	</form>
+<br><br><br><br>
+{% include 'footer.html'%}

@@ -1,0 +1,153 @@
+{% extends "pred_app/base.html" %}
+{% load static %}
+{% block nav %}
+<li>
+    <a href="index">
+        Home
+    </a>
+</li>
+<li>
+    <a href="pred">
+        Prediction
+    </a>
+</li>
+<li>
+    <a href="contact">
+       Review
+    </a>
+</li>
+<li >
+    <a href="viewusers">
+       Profile
+    </a>
+</li>
+<li >
+    <a href="changepassword">
+      Reset Password
+    </a>
+</li>
+<li>
+    <a href="logout">
+       Sign Out
+    </a>
+</li>
+{% endblock nav %}
+{% block content %}
+<div class="content">
+    <div class="article">
+        {% comment %} <h2>
+            <span>
+                To Contact Us
+            </span>
+        </h2> {% endcomment %}
+        <div class="clr">
+        </div>
+    </div>
+    <div class="article">
+        {% comment %} <h2>
+            <span>
+                Send us
+            </span>
+            mail
+        </h2> {% endcomment %}
+        <div class="clr">
+        </div>
+        <style type="text/css">
+            /*.container{
+                text-align: center;
+                background-color: rgb(99, 109, 109);
+                padding: 100px;
+            }*/
+            table{
+                width: 100%;
+                padding: 12px;
+                border-radius: 4px;
+                resize: vertical;
+                color: black;
+                font-style: bold;
+                font-family:Calibri;
+                font-size: 20px;
+            }
+            th{
+                width: 40%;
+                padding: 12px;
+                border-radius: 4px;
+                resize: vertical;
+                color: black;
+                font-style: bold;
+                font-family:Calibri;
+                font-size: 20px;
+            }
+            tr{
+              width: 90%;
+                padding: 12px;
+                border-radius: 4px;
+                resize: vertical;
+                color: black;
+                font-style: bold;
+                font-family:Calibri;
+                font-size: 20px;
+            }
+            td{
+              width: 90%;
+                padding: 12px;
+                border-radius: 4px;
+                resize: vertical;
+                color: black;
+                font-style: bold;
+                font-family:Calibri;
+                font-size: 20px;
+    
+            }
+            textarea{
+                width: 90%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+            }
+            input[type=text]{
+                width: 90%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+            }
+            input[type=submit]
+            {
+                width: 20%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+            }
+    
+           
+        </style>
+        <form action="contact" id="sendemail" method="post">
+            {% csrf_token %}
+            <h1 align="center"><font size="20" color="blue">Add Reviews Here..</font></h1><br>
+            <table  align="Center">
+                <tr class="tr">
+                    <th>Title</th>
+                    <td class="td">
+                    <input type="text" name="title" required="" placeholder="Enter Title">
+                    </td>
+                    </tr>
+             <tr class="tr">
+             <th>Feedback</th>
+             <td class="td">
+             <textarea name="content" required=""></textarea>
+             </td>
+             </tr>
+             <tr class="tr">
+             <td colspan="2" align="center" class="td">
+                   <input type="submit" name="submit" value="SEND" class="btn btn-primary">
+             </td>
+             </tr>
+            </table>
+            </ol>
+        </form>
+    </div>
+</div>
+{% endblock content %}

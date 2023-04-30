@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Baloo Bhaijaan 2', cursive; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+
+
+footer {
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    margin-top: -27%;
+    
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.footerInfo {
+    background-color: #2c3e50;
+    width: 100%;
+}
+
+.footerContainer {
+    margin: 50px 100px;
+}
+
+.footerItem {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+
+
+.mainTitle {
+    position: relative;
+    display: inline-block;
+}
+.mainTitle h4 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+.mainTitle span {
+    width: 10%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 29px;
+    transition: all .5s ease;
+}
+
+.mainTitle:hover span {
+    width: 100%;
+}
+
+.socialLink {
+    width: 35px;
+    height: 35px;
+   /* background-color: #fff;*/
+    color: #2c3e50;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+.facebook {
+    transition: all .5s ease;
+}
+.facebook:hover {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.instagram {
+    transition: all .5s ease;
+}
+.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: #fff;
+}
+
+
+.twitter {
+    transition: all .5s ease;
+}
+.twitter:hover {
+    background-color:  #55acee;
+    color: #fff;
+}
+
+.socialLink i {
+    animation: socialItemAnimation 2s infinite;
+}
+
+@keyframes socialItemAnimation {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+.socialItem a {
+    display: block;
+    color: #ddd;
+    font-size: 14px;
+    text-transform: capitalize;
+    transition: all .5s ease;
+}
+.socialItem a:hover {
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+
+.addressTitle {
+    color: #ddd;
+    font-size: 16px;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+.callInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.callInfo h6 {
+    color: #ddd;
+    margin-right: 6px;
+    font-size: 14px;
+}
+
+.callInfo i {
+    margin-right: 15px;
+    color: #fff;
+}
+
+.callInfo span {
+    color: #fff;
+    padding: 10px 25px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .3);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.callInfo span:hover {
+    transform: scale(.95);
+}
+
+
+
+@media screen and (max-width: 1199.99px) {
+    .footerContainer {
+        margin: 50px;
+    }
+    .footerItem {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+}
+
+
+@media screen and (max-width: 991.99px) {
+    .footerContainer {
+        margin: 35px;
+    }
+    .footerItem {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media screen and (max-width: 575.99px) {
+    .footerContainer {
+        margin: 15px;
+    }
+    .footerItem {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}

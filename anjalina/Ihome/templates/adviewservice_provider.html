@@ -1,0 +1,38 @@
+{% include 'adminheader.html' %}
+
+<br><br><br><br><br><br>
+
+<body>
+	<br><br>
+	<h1 align="center"><font color="#FF5733"><u>Service Providers</u></font></h1>
+
+	<form method="post">
+		<table align="center" class="table" style="border-radius:15px;width:90%;background-color:#F5F5F5;">
+			<thead>
+				<tr>
+					<th><font color="#FF5733">SL No.</font></th>
+					<th><font color="#FF5733">Name</font></th>
+					<th><font color="#FF5733">Area Name</font></th>
+					<th><font color="#FF5733">Place</font></th>
+					<th><font color="#FF5733">Pincode</font></th>
+					<th><font color="#FF5733">Contact</font></th>
+					<th><font color="#FF5733">Email</font></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in data['ser'] %}
+				<tr>
+					<td>{{ loop.index }}</td>
+					<td>{{ row['NAME'] }}</td>
+					<td>{{ row['area_name'] }}</td>
+					<td>{{ row['place'] }}</td>
+					<td>{{ row['pincode'] }}</td>
+					<td>{{ row['phone_number'] }}</td>
+					<td>{{ row['email'] }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</form>
+
+{% include 'footer.html' %}

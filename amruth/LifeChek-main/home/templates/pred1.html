@@ -1,0 +1,91 @@
+{%extends 'base.html'%} {%block content%}
+
+<div class="">
+    <div class="inner-banner-w3ls">
+		<div class="container">
+
+		</div>
+		<!-- //banner 2 -->
+    </div>
+
+   <!-- contact -->
+<div class="agileits-contact py-5">
+    <div class="py-xl-5 py-lg-3">
+      <div class="w3ls-titles text-center mb-5">
+        <h3 class="title" style="font-family:Italic;color:green"><b>Lung Cancer Prediction</b></h3>
+        <span>
+          <i class="fas fa-user-md"></i>
+        </span>
+        <hr />
+        {% if context %}
+        <div class="display-4 my-2 text-center">
+            <p style="color:red;font-size:80%"><b>RESULT:</b></p>You {{ context }} Level.
+        </div>
+        {% endif %}
+      </div>
+      <div class="d-flex">
+        <div class="col-lg-5 lung-cancer">
+        </div>
+        <div class="col-lg-7 contact-right-w3l">
+          <h5 class="title-w3 text-center mb-5" style="font-family:Italic">Get In Touch</h5>
+          <!-- start from here -->
+
+          <form class="row" method="POST" action="{% url 'lung_cancer' %}">
+            {% csrf_token %}
+            <div class="col-md-7">
+
+              <label style="color: black;" >Age</label>
+              <div class="form-group">
+
+                <input
+                type="number"
+                class="form-control"
+                id="Age"
+                name="Age"
+                />
+              </div>
+              <label style="color: black;" >No. of Smokes per day</label>
+              <div class="form-group">
+
+                <input
+                type="number"
+                class="form-control"
+                id="Smokes"
+                name="Smokes"
+                />
+              </div>
+              <label style="color: black;" >AreaQ</label>
+              <div class="form-group">
+
+                <input
+                type="number"
+                class="form-control"
+                id="AreaQ"
+                name="AreaQ"
+                />
+              </div>
+              <label style="color: black;" >Alcohol per day</label>
+              <div class="form-group">
+
+                <input
+                type="number"
+                class="form-control"
+                id="Alcohol"
+                name="Alcohol"
+                />
+              </div>
+              <button type="submit" class="btn-lg btn-block btn btn-primary mb-5" style="background-color: green">
+                Submit
+              </button>
+            </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //contact -->
+
+
+{%endblock%}

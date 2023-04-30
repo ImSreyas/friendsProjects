@@ -1,0 +1,102 @@
+{% include 'userheader.html' %}
+    <style type="text/css">
+        /*.container{
+            text-align: center;
+            background-color: rgb(99, 109, 109);
+            padding: 100px;
+        }*/
+        table{
+            width: 50%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        th{
+            width: 20%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        tr{
+        	width: 90%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        td{
+        	width: 90%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+
+        }
+        
+        input[type=text]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        textarea{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        input[type=submit]
+        {
+            width: 20%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+       
+    </style>
+    <body style="background-image: url(/static/images/gallery-02.jpg);">
+        <form method="post">
+        	
+<!--         	<h1 align="center"><font size="20" color="blue">Sign In</font></h1>
+ -->           <table  align="Center">
+    <br><br><br>
+<br><br><br>
+<br><br><br>
+
+    <tr class="tr">
+            <tr class="tr">
+                <th>Feedback</th>
+                <td class="td">
+                    <textarea name="feed" required="">      Write Your Feedbacks Here....              
+                    </textarea>
+                </td>
+            </tr>  
+           
+           	<tr class="tr">
+           		<td colspan="2" align="center" class="td">
+           			<input type="submit" name="submit" value="Send" class="btn btn-primary">
+           		</td>
+           	</tr>
+           </table>
+            
+        </form>
+
+{% include 'footer.html' %}

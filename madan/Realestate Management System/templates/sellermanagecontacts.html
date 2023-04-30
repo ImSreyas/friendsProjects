@@ -1,0 +1,25 @@
+{% include 'sellerheader.html' %}
+<body style="background: pink">
+	
+	<h1 align="center"><font color="black"><u>Contacts</u></font></h1>
+	<form method="post">
+		<br><br><br><br><br><br>
+	<table  align="center" class="table" style="width:700px;height: 200px;">
+			<tr>
+				<th><font color="white">Name</font></th>	
+				<th><font color="white">Phone</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['con']%}
+			<td><font color="white"><b>{{row['NAME']}}</b></font></td>
+			<td><font color="white"><b>{{row['phone']}}</b></font></td>
+			<td><a href="/seller/viewreview?id={{row['customer_id']}}" class="btn btn-primary">Reviews</b></font></td>
+			<td><a href="/seller/view_enquires?id={{row['customer_id']}}" class="btn btn-primary">Enquires</td>		
+		</tbody>
+		{% endfor %}
+	</table>
+			
+
+	</form>
+<br><br><br><br>
+{% include 'footer.html' %}

@@ -1,0 +1,29 @@
+{% include 'userheader.html' %}
+<br><br><br><br><br><br>
+<body>
+  <br><br>
+  <h1 align="center"><font color="red"><u>Service Providers</u></font></h1>
+  <form method="post">
+    <table  align="center" class="table" style="width:700px;background-color:white;border-radius:15px;">
+      <tr>
+        <th><font color="red">SL No.</font></th>
+        <th><font color="red">Area Name</font></th>
+        <th><font color="red">Provider Name</font></th>
+        <th><font color="red">Service Name</font></th>
+      </tr>
+      <tbody>
+        {% for row in data['sp'] %}
+        <td>{{loop.index}}</td>
+        <td>{{row['area_name']}}</td>
+
+        <td>{{row['NAME']}}</td>
+        <td>{{row['service_name']}}</td>
+        <td>
+
+          <a href="/user/user_sendrequest?id={{row['provider_id']}}&id1={{row['service_id']}}" class="btn btn-primary">Send Request</a>
+        </td>
+        {% endfor %}
+      </tbody>
+    </table>
+  </form>
+{% include 'footer.html' %}

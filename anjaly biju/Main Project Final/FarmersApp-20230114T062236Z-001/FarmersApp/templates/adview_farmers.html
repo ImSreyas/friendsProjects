@@ -1,0 +1,40 @@
+{% include 'adminheader.html'%}
+<body style="background: pink">
+	<br><br><br>
+	<h1 align="center"><font color="black"><u>Farmers Details</u></font></h1>
+	<form method="post">
+
+	<table  align="center" class="table" style="width:700px;">
+			<tr>
+				<th><font color="black">Name</font></th>
+				<th><font color="black">Address</font></th>
+				<th><font color="black">Gender</font></th>
+				<th><font color="black">Place</font></th>
+				<th><font color="black">District</font></th>
+				<th><font color="black">State</font></th>
+				<th><font color="black">Country</font></th>
+				<th><font color="black">Pincode</font></th>
+				<th><font color="black">Mobile No.</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['fam']%}
+			<td><font color="black"><b>{{row['NAME']}}</b></font></td>
+			<td><font color="black"><b>{{row['address']}}</b></font></td>
+			<td><font color="black"><b>{{row['gender']}}</b></font></td>
+			<td><font color="black"><b>{{row['place']}}</b></font></td>
+			<td><font color="black"><b>{{row['district']}}</b></font></td>
+			<td><font color="black"><b>{{row['state']}}</b></font></td>
+			<td><font color="black"><b>{{row['country']}}</b></font></td>
+			<td><font color="black"><b>{{row['pincode']}}</b></font></td>
+			<td><font color="black"><b>{{row['mobileno']}}</b></font></td>
+			<td>
+				<a href="?action=delete&id={{row['farmer_id']}}&id1={{row['log_id']}}" class="btn btn-primary">Delete</a>
+			</td>
+		</tbody>
+		{% endfor %}
+	</table>
+			
+
+	</form>
+<br><br><br><br>
+{% include 'footer.html'%}

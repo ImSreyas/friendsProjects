@@ -1,0 +1,44 @@
+{% include 'adminheader.html'%}
+<br> <br> <br>
+<style>
+table{
+	border:1px solid black;
+	padding:25px;
+	width: 80%;
+	text-align: center;
+	border-radius: 20px;
+}
+tr:hover {background-color:lightgrey}
+th{background-color:#5f4def;
+	color:white;
+}
+</style>
+<body>
+	<table align='center'>
+		<h1 align='center'><font color="blue">Feedback Status</font></h1>
+		<form method="post">
+		<tr>
+			<th>Date</th>
+			<th>Name</th>
+			<th>feedback</th>
+			<th>Reply</th>
+		</tr>
+		{% for row in data['feed'] %}
+		<tr>
+			<td><b>{{row['date']}}</b></td>
+			<td><b>{{row['NAME']}}</b></td>
+			<td><b>{{row['feedback']}}</b></td>
+			{% if row['reply']=="pending" %}
+				<td>
+					<textarea name="reply{{loop.index}}"></textarea>
+					<input type="submit" name="submit{{loop.index}}" value="submit">
+				</td>
+				{% else %}
+				<td><b>{{row['reply']}}</b></td>
+				{% endif %}		</tr>
+		{% endfor %}
+	</table>
+</body>
+<br><br><br><br><br><br><br>
+
+{% include 'footer.html'%}

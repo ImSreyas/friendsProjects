@@ -1,0 +1,125 @@
+{% include 'customerheader.html' %}
+<br><br>
+<style type="text/css">
+
+        table{
+            background-color: lightsteelblue;
+            border: 1px solid gray;
+            text-align: center;
+            width: 50%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: white;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        th{
+            width: 20%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: white;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        tr{
+        	width: 90%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+        }
+        td{
+        	width: 60%;
+            padding: 12px;
+            border-radius: 4px;
+            resize: vertical;
+            color: black;
+            font-style: bold;
+            font-family:Calibri;
+            font-size: 20px;
+
+        }
+        input[type=text]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        input[type=email]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+
+        }
+        input[type=date]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+
+        }
+        input[type=submit]
+        {
+            width: 20%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+         textarea{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+</style>
+
+<body>
+        <form method="post">
+        	<br><br><br>
+<center>
+	<div class="cont2" align="center">
+		<h1 align="center"><font size="7px" color="blue">Park Details</font></h1>
+		{% for row in data['park'] %}
+		<form method="post">
+
+            <center>
+			<table align="center">
+				<tr>
+					<td>Park Name :</td>
+					<td>{{row['park_name']}}</td>
+				</tr>
+				<tr>
+					<td>Photo:</td>
+					<td><img src="/{{row['park_image']}}" width="200" height="200"></img></td>
+				</tr>
+                <tr>
+                    <td>Description :</td>
+                    <td>{{row['park_des']}}</td>
+                </tr>
+				
+                 </center>
+			</table>
+		</form>
+		{% endfor %}
+	</div>
+</center>
+</center>
+</body>
+<br>
+<br>
+<br>
+{% include 'footer.html' %}
+	

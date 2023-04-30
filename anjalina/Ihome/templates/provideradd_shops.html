@@ -1,0 +1,33 @@
+{% include 'provider_header.html' %}
+<br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Add Shops</h2></center>
+	<table  align="center" style="width: 40%;color: blue;" class="table" >
+		<tr>
+			<th bgcolor="powdergreen">Shop Name</th>
+			<td>
+				<input type="text" name="shop_name" class="form-control" required="" style="width:90%;height: 40px"></td>
+			</td>
+		</tr>
+		<tr>
+				<th bgcolor="powdergreen">Place</font></th>
+				<td><input type="text" name="place" class="form-control" required="" style="width:90%;height: 40px"></td>
+			</tr>
+			<tr>
+				<th bgcolor="powdergreen">Phone</font></th>
+				<td><input type="text" name="phone" pattern="[0-9]{10}" class="form-control" required="" style="width:90%;height: 40px"></td>
+			</tr>
+			<tr>
+				<th bgcolor="powdergreen">Email</font></th>
+				<td><input type="email" name="email"  class="form-control" required="" style="width:90%;height: 40px"></td>
+			</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-primary" value="Submit"></td>
+		</tr>
+	</table>
+	
+
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

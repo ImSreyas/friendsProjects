@@ -1,0 +1,34 @@
+{% include 'userheader.html' %}
+<br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Products</h2></center>
+	<table  align="center" style="width: 100%;color: blue;" class="table" >
+		<tr>
+			<th bgcolor="powdergreen">Date</th>
+			<th bgcolor="powdergreen">User Name</th>
+			<th bgcolor="powdergreen">Product Name</th>
+<!-- 			<th bgcolor="powdergreen">Quantity</th>
+ -->			<th bgcolor="powdergreen">Total Amount</th>
+			<th bgcolor="powdergreen">Delivery Status</th>
+			
+		</tr>
+		<tbody>
+			{% for row in data['or'] %}
+			<tr>
+				<td>{{row['date']}}</td>	
+				<td>{{row['NAME']}}</td>			
+				<td>{{row['product_name']}}</td>
+<!-- 				<td>{{row['quantity']}}</td>
+ -->				<td>{{row['total_amount']}}</td>
+				<td>{{row['delivery_status']}}</td>
+
+			</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

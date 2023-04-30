@@ -1,0 +1,23 @@
+{% include 'publicheader.html'%}
+<body style="background: pink">
+	<br><br><br>
+	<h1 align="center"><font color="black">Notifications</font></h1>
+	<form method="post">
+
+	<table  align="center" class="table" style="width:700px;">
+			<tr>
+				<th><font color="black">Date</font></th>
+				<th><font color="black">Notifications</font></th>
+			</tr>
+			<tbody>
+			{% for row in data['notification']%}
+			<td><font color="black"><b>{{row['date']}}</b></font></td>
+			<td><font color="black"><b>{{row['message']}}</b></font></td>
+		</tbody>
+		{% endfor %}
+	</table>
+			
+
+	</form>
+<br><br><br><br>
+{% include 'footer.html'%}

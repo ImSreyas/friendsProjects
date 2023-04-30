@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+#check {
+  display: none;
+}
+label #btn,
+label #cancle {
+  position: absolute;
+  cursor: pointer;
+  background: #042331;
+  color: #fff;
+  border-radius: 3px;
+}
+
+label #btn {
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: #fff;
+  padding: 6px 12px;
+  transition: all 0.5s;
+}
+#cancle {
+  z-index: 1111;
+  left: -195px;
+  top: 17px;
+  font-size: 30px;
+  color: #0a5275;
+  padding: 4px 9px;
+  transition: all 0.5s;
+}
+/* active side bar */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #042331;
+  transition: all 0.5s ease;
+  float: left;
+  
+  
+}
+#check:checked ~ .sidebar {
+  left: 0;
+}
+#check:checked ~ label #btn {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancle {
+  left: 245px;
+}
+#check:checked ~ section {
+  margin-left: 250px;
+}
+.sidebar header img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+.sidebar header {
+  font-size: 22px;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  background: #063146;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  user-select: none;
+}
+.sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: #fff;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid black;
+  transition: 0.4s;
+}
+.sidebar ul a i {
+  margin-right: 16px;
+}
+/* hover effect */
+ul li:hover a {
+  padding-left: 50px;
+}
+/* Social Links */
+.social-links i {
+  padding: 10px;
+  margin-left: 16px;
+  margin-top: 10px;
+  color: #fff;
+  background: #04334b;
+  font-size: 20px;
+}
+/* icons hover effect */
+.social-links i:hover {
+  background: #1492d1;
+}
+.sidebar header p {
+  padding: 15px;
+}

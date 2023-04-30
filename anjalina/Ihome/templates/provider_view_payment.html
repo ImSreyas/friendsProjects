@@ -1,0 +1,30 @@
+{% include 'provider_header.html' %}
+<br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Payment</h2></center>
+	<table  align="center" style="width: 700px;color: blue;" class="table" border="1" >
+		<tr>
+			<th bgcolor="powdergreen">Amount</th>
+<!-- 			<th bgcolor="powdergreen">Payment Description</th>
+ -->			<th bgcolor="powdergreen">Payment Date</th>
+<!-- 			<th bgcolor="powdergreen"></th>
+ -->		</tr>
+		<tbody>
+			{% for row in data['viewpayment'] %}
+			<tr>
+				<td>{{row['amount_paid']}}</td>
+				
+<!-- 				<td>{{row['payment_description']}}</td>
+ -->				<td>{{row['payment_date']}}</td>
+				
+				<td><a href="confirmpay?pid={{row['proposal_id']}}&bid={{row['bid']}}" class="btn btn-primary">Confirm Payment</a></td>
+			</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

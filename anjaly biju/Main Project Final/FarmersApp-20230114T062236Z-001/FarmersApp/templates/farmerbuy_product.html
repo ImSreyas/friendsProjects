@@ -1,0 +1,84 @@
+{% include 'farmerheader.html' %}
+<br><br><br><br><br>
+<style>
+.grid-container{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	background-color: white;
+	padding: 10px;
+	grid-row-gap: 5px;
+	grid-column-gap: 10px;
+}	
+.grid-item {
+	background-color: white;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 15px;
+	text-align: center;
+	}
+
+table{
+	background-color: lightyellow;
+	padding: 30px;
+	text-align: center;
+
+	}
+td{
+	width:50%;
+	padding: 20px;
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+}
+tr{
+	width:50%;
+	padding: 20px;
+
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+}
+input[type=text]{
+	width:95%;
+	padding: 20px;
+
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+/*	border:1px solid black;
+*/}
+	input[type=submit]{
+	width:45%;
+	padding: 20px;
+
+	font-family: Calibri;
+	font-size: 20px;
+	resize:vertical;
+	color: lightblue;
+}
+
+</style>
+    <body style="background-image: url(/static/images/gallery-02.jpg);">
+    	<form method="post">
+    	<h1 align="center"> <font size="30">Buy Machine</font></h1>
+	<div class="grid-container">
+		
+			{% for row in data['carts'] %}
+					<div class="grid-item">
+						<h3><b>Farmer Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['NAME']}}</b></h3><br>
+						<h3><b>Machine Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['machine_name']}}</b></h3><br>	
+						<h3><b>Quantity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{row['quantity']}}</h3></b><br>	
+						<h3><b>Price:&nbsp;&nbsp;&nbsp;&nbsp;{{row['amount']}}</b></h3><br><h3><b>
+							<tr class="tr">
+           		<td colspan="2" align="center" class="td">
+           			<input type="submit" name="submit" value="Buy" class="btn btn-primary">
+           		</td>
+           	</tr>
+					</div>
+			{% endfor %} 
+	</div>
+</form>
+</body>
+<br><br><br><br>
+
+{% include 'footer.html' %}

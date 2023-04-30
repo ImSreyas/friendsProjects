@@ -1,0 +1,40 @@
+{% include 'userheader.html' %}
+<br><br><br><br><br><br><br><br><br><br>
+<form method="post">
+	<center><h2 style="color: red;">Send Complaint</h2></center>
+	<table  align="center" style="width: 700px;color: blue;" class="table" >
+		<tr>
+			<th bgcolor="powdergreen">Complaint</th>
+			<td><textarea name="comp" required=" " class="form-control"></textarea> </td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" class="btn btn-primary" value="Send"></td>
+		</tr>
+	</table>
+	<br>
+<br>
+	<table  align="center" style="width: 700px;color: blue;" class="table" border="1" >
+		<tr>
+			<th bgcolor="powdergreen">Date</th>
+			<th bgcolor="powdergreen">User Name</th>
+			<th bgcolor="powdergreen">Complaint</th>
+			<th bgcolor="powdergreen">Reply</th>
+<!-- 			<th bgcolor="powdergreen"></th>
+ -->		</tr>
+		<tbody>
+			{% for row in data['compl'] %}
+			<tr>
+				<td>{{row['complaint_date']}}</td>
+				<td>{{row['NAME']}}</td>
+				<td>{{row['complaint_description']}}</td>
+				<td>{{row['reply']}}</td>
+			</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+</form>
+<br>
+<br>
+{% include 'footer.html' %}

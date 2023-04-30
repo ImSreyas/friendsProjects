@@ -1,0 +1,55 @@
+{% include 'adminheader.html' %}
+<br><br><br><br>
+<style type="text/css">
+	table{
+		border: 1px solid gray;
+		width: 80%;
+		padding: 10px;
+	}
+	tr{
+		border: 1px solid gray;
+		padding: 10px;
+	}
+	th{
+		border: 1px solid gray;
+		padding: 10px;
+		text-align: center;
+	}
+	td{
+		border: 1px solid gray;
+		padding: 10px;
+	}
+
+</style>
+<body>
+	<h1 align="center"><font size="20" color="blue">Reviews</font></h1>
+	<br><br>
+	<form method="post">
+	<table align="Center">
+		<tr>
+			<th>Date</th>
+			<th>Name</th>
+			<th>Feedback</th>
+			<th>Reply</th>
+		</tr>
+		{% for row in data['feed'] %}
+		<tr>
+			<td><font color="purple" size="3">{{row['date']}}</font></td>
+			<td><font color="purple" size="3">{{row['name']}}</font></td>
+			<td><font color="purple" size="3">{{row['feedback']}}</font></td>
+			{% if row['reply']=="Pending" %}
+				<td>
+					<textarea name="reply{{loop.index}}"></textarea>
+					<input type="submit" name="submit{{loop.index}}" value="submit">
+				</td>
+				{% else %}
+				<td><font color="black"><b>{{row['reply']}}</b></font></td>
+				{% endif %}
+		</tr>
+		{% endfor %}
+
+	</table>
+</form>
+</body>
+<br><br><br>
+{% include 'footer.html' %}

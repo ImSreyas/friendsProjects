@@ -1,0 +1,33 @@
+{% include 'adminheader.html'%}
+<body>
+	<br><br>
+	<h1 align="center"><font color="red"><u>Bookings</u></font></h1>
+	<form method="post">
+		<table border=1 align="center" class="table" style="width:700px;background-color:#f1f1c1">
+			<tr>
+				<th><font color="red">SL No.</font></th>
+				<th><font color="red">User Name</font></th>
+				<th><font color="red">Provider Name</font></th>
+				<th><font color="red">Service Name</font></th>
+				<th><font color="red">Booking Date</th>
+				<th><font color="red">Booking Description</font></th>
+				<th><font color="red">Work Image1</font></th>
+				<th><font color="red">Work Image2</th>
+				<th><font color="red">Booking Status</font></th>
+			</tr>
+			<tbody>
+				{% for row in data['book']%}
+				<td>{{loop.index}}</td>
+				<td>{{row['UNAME']}}</td>
+				<td>{{row['SNAME']}}</td>
+				<td>{{row['service_name']}}</td>
+				<td>{{row['booking_date']}}</td>
+				<td>{{row['booking_description']}}</td>
+				<td><img src="{{row['work_image1']}}" width="200" height="200"></img></td>
+				<td><img src="{{row['work_image2']}}" width="200" height="200"></img></td>
+				<td>{{row['booking_status']}}</td>
+			</tbody>
+			{% endfor %}
+		</table>
+	</form>
+{% include 'footer.html'%}

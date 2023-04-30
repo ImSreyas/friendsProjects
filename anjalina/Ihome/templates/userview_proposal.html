@@ -1,0 +1,36 @@
+{% include 'userheader.html'%}
+<form method="post">
+	<br><br><br><br><br><br>
+<table  align="center" style="width: 700px;color: blue;" class="table"  >
+	<h1 align="center">View Proposals</h1>
+		<tr>
+			<th bgcolor="powdergreen">Proposal Description</th>
+			<th bgcolor="powdergreen">Estimated Amount </th>
+			<th bgcolor="powdergreen">Date</th>
+			<th bgcolor="powdergreen">Status</th>
+<!-- 			<th bgcolor="powdergreen"></th>
+ -->		</tr>
+		<tbody>
+			{% for row in data['viewproposal'] %}
+			<tr>
+				<td>{{row['proposal_description']}}</td>
+				<td>{{row['estimated_amount']}}</td>
+				<td>{{row['date']}}</td>
+<!-- 				<td>{{row['status']}}</td>
+ -->				{%if row['status']=="pending" %}
+				
+				<td><a href="accept?&id1={{row['proposal_id']}}&bid={{row['booking_id']}}" class="btn btn-primary">Accept</a><br><br><br>
+				<a href="reject?&id1={{row['proposal_id']}}&bid={{row['booking_id']}}" class="btn btn-primary">Reject</a>
+				
+				{% else %}
+				<td>{{row['status']}}</td>
+				<td><a href="make_payment?&id1={{row['proposal_id']}}&bid={{row['booking_id']}}" class="btn btn-primary">Payment</a>
+				{% endif %}
+			</tr>
+
+
+			{% endfor %}
+		</tbody>
+</table>
+</form>
+{% include 'footer.html' %} 
